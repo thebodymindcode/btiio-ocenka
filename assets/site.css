@@ -457,6 +457,8 @@ footer h4{font:600 15px/1 Inter;color:#fff;margin-bottom:16px;letter-spacing:.02
 .qlist{max-width:900px;margin:0;padding-left:22px;display:grid;gap:12px}
 .qlist li{font-size:16.5px;color:var(--ink2)}
 .sv.soon{opacity:.5;pointer-events:none;border-style:dashed}
+.mcol .soonlink{display:block;font-size:14.8px;color:var(--mut);padding:5px 0;opacity:.75}
+.mcol .soonlink::after{content:" скоро";font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:#B0813A}
 .chead h3 a{color:inherit}
 .chead h3 a:hover{color:var(--acc)}
 @media(max-width:1080px){.hero.srv .in{grid-template-columns:1fr}}
