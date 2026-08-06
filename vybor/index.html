@@ -3,175 +3,238 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>БТИиО: выбираем цвета и логотип</title>
+<title>БТИиО: цвета и логотип</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0B1320;--ink2:#4A5769;--mut:#7C899B;--line:#E4E9F1;--bg2:#F5F7FB;
-  --acc:#1B4DB3;--acc2:#64748B;--soft:#EAF0FC}
+:root{--ink:#0B1320;--ink2:#4A5769;--mut:#7C899B;--line:#E4E9F1;--bg2:#F6F8FC;--acc:#1B4DB3;--soft:#EAF0FC}
 *{box-sizing:border-box}
-body{margin:0;font:400 16px/1.55 Inter,system-ui,sans-serif;color:var(--ink);background:#fff}
+body{margin:0;font:400 16px/1.55 Inter,system-ui,sans-serif;color:var(--ink);background:#fff;padding-bottom:96px}
 h1,h2,h3{font-family:Onest,Inter,sans-serif;font-weight:800;letter-spacing:-.03em;margin:0}
-h1{font-size:clamp(26px,4vw,42px);line-height:1.12}
-h2{font-size:clamp(20px,2.4vw,28px)}
-h3{font-size:17px;font-weight:700}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.top{background:var(--ink);color:#fff;font-size:14px}
-.top .wrap{display:flex;gap:16px;align-items:center;height:44px}
-.hero{padding:44px 0 30px;border-bottom:1px solid var(--line)}
-.lede{font-size:18px;color:var(--ink2);max-width:720px;margin-top:14px}
-.sec{padding:44px 0;border-bottom:1px solid var(--line)}
-.eyebrow{font:700 12px/1 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
-.hint{background:var(--bg2);border-left:3px solid var(--acc);padding:12px 16px;border-radius:0 10px 10px 0;
-  color:var(--ink2);font-size:15px;margin:16px 0 26px;max-width:820px}
+h1{font-size:clamp(27px,4vw,44px);line-height:1.1}
+h2{font-size:clamp(21px,2.4vw,29px)}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.top{background:var(--ink);color:#fff;font-size:13.5px}
+.top .wrap{display:flex;align-items:center;height:44px;letter-spacing:.02em}
+.hero{padding:44px 0 32px;border-bottom:1px solid var(--line)}
+.lede{font-size:18px;color:var(--ink2);max-width:760px;margin-top:14px}
+.sec{padding:46px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font:700 12px/1 Inter;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:10px}
+.hint{background:var(--bg2);border-left:3px solid var(--acc);padding:13px 17px;border-radius:0 10px 10px 0;
+  color:var(--ink2);font-size:15px;margin:16px 0 28px;max-width:860px}
 
-/* цветовые схемы */
-.schemes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.sch{border:2px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;background:#fff;
-  transition:border-color .2s,box-shadow .2s,transform .2s}
-.sch:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(11,19,32,.12)}
-.sch.on{border-color:var(--acc);box-shadow:0 0 0 4px rgba(27,77,179,.12)}
-.sch .demo{padding:0}
-.sch .bar{display:flex;align-items:center;gap:9px;padding:12px 14px;color:#fff}
-.sch .bar b{font:800 15px/1 Onest}
-.sch .bar .sp{flex:1}
-.sch .bar .btn{background:#fff;border-radius:8px;padding:6px 11px;font:600 11.5px/1 Inter}
-.sch .body{padding:16px 14px 18px;background:#fff}
-.sch .body .t{height:9px;border-radius:5px;margin-bottom:8px}
-.sch .body .t.w1{width:78%}.sch .body .t.w2{width:54%;opacity:.5}
-.sch .chips{display:flex;gap:7px;margin-top:14px}
-.sch .chips i{width:26px;height:26px;border-radius:8px;display:block}
-.sch .cap{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-top:1px solid var(--line)}
-.sch .cap b{font:700 14.5px/1.2 Inter}
-.sch .cap span{font-size:12.5px;color:var(--mut)}
-.num{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:24px;border-radius:7px;
-  background:var(--ink);color:#fff;font:700 12px/1 Inter;padding:0 8px}
+/* предпросмотр */
+.prev{border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 20px 46px rgba(11,19,32,.09)}
+.prev .ph{display:flex;align-items:center;gap:14px;padding:18px 24px;border-bottom:1px solid var(--line);background:#fff}
+.prev .ph svg{width:44px;height:44px}
+.prev .nm{display:flex;flex-direction:column;line-height:1}
+.prev .nm b{font:800 21px/1 Onest;letter-spacing:-.02em}
+.prev .nm i{font:600 9.5px/1 Inter;font-style:normal;letter-spacing:.19em;text-transform:uppercase;color:var(--mut);margin-top:6px}
+.prev .ph .sp{flex:1}
+.prev .ph .cta{border-radius:12px;padding:12px 20px;color:#fff;font:600 14.5px/1 Inter}
+.prev .body{padding:34px 24px 38px;background:var(--bg2)}
+.prev .body h3{font-size:30px;letter-spacing:-.03em;max-width:15ch;line-height:1.12}
+.prev .body p{color:var(--ink2);max-width:52ch;margin:14px 0 22px}
+.prev .body .row{display:flex;gap:10px;flex-wrap:wrap}
+.prev .body .b1{border-radius:12px;padding:13px 22px;color:#fff;font:600 15px/1 Inter}
+.prev .body .b2{border-radius:12px;padding:13px 22px;background:#fff;border:1px solid var(--line);font:600 15px/1 Inter}
+.prev .foot{display:flex;align-items:center;gap:12px;padding:16px 24px}
+.prev .foot svg{width:30px;height:30px}
+.prev .foot b{font:800 16px/1 Onest;color:#fff}
+
+/* цвета */
+.schemes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.sch{border:2px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;background:#fff;
+  transition:border-color .18s,box-shadow .18s,transform .18s}
+.sch:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(11,19,32,.12)}
+.sch.on{border-color:var(--acc);box-shadow:0 0 0 4px rgba(27,77,179,.13)}
+.sch .strip{height:58px;display:flex}
+.sch .strip i{flex:1}
+.sch .cap{padding:11px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.sch .cap b{font:700 13.5px/1.25 Inter}
+.sch .cap span{font-size:11.5px;color:var(--mut);display:block;margin-top:2px}
+.num{display:inline-flex;align-items:center;justify-content:center;height:22px;border-radius:6px;
+  background:var(--ink);color:#fff;font:700 11px/1 Inter;padding:0 8px;white-space:nowrap}
 
 /* логотипы */
-.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .lg{border:2px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;cursor:pointer;
-  transition:border-color .2s,box-shadow .2s,transform .2s}
-.lg:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(11,19,32,.12)}
-.lg.on{border-color:var(--acc);box-shadow:0 0 0 4px rgba(27,77,179,.12)}
-.lg .big{height:120px;display:flex;align-items:center;justify-content:center;background:var(--bg2)}
-.lg .big svg{width:64px;height:64px}
-.lg .row{display:flex;align-items:center;gap:10px;padding:12px 14px;border-top:1px solid var(--line)}
-.lg .row svg{width:30px;height:30px;flex:0 0 30px}
-.lg .row b{font:800 16px/1 Onest;letter-spacing:-.02em}
+  transition:border-color .18s,box-shadow .18s,transform .18s}
+.lg:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(11,19,32,.12)}
+.lg.on{border-color:var(--acc);box-shadow:0 0 0 4px rgba(27,77,179,.13)}
+.lg .big{height:112px;display:flex;align-items:center;justify-content:center;background:var(--bg2)}
+.lg .big svg{width:62px;height:62px}
+.lg .row{display:flex;align-items:center;gap:9px;padding:11px 13px;border-top:1px solid var(--line)}
+.lg .row svg{width:26px;height:26px;flex:0 0 26px}
+.lg .row b{font:800 15px/1 Onest;letter-spacing:-.02em}
 .lg .row.dark{background:var(--ink)}
 .lg .row.dark b{color:#fff}
-.lg .cap{padding:11px 14px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
-.lg .cap b{font:700 14px/1.2 Inter}
+.lg .cap{padding:10px 13px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:6px}
+.lg .cap b{font:700 13px/1.2 Inter}
 
-.pick{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:14px 0;z-index:5;
-  box-shadow:0 -8px 24px rgba(11,19,32,.07)}
-.pick .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.pick b{font:700 15px/1 Inter}
-.pick .val{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-weight:600}
+.pick{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);
+  padding:14px 0;z-index:9;backdrop-filter:blur(8px);box-shadow:0 -8px 26px rgba(11,19,32,.08)}
+.pick .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pick .val{background:var(--soft);border:1px solid #d7e2f6;border-radius:10px;padding:9px 14px;font-weight:600;font-size:14.5px}
 .pick .sp{flex:1}
-.pick a{background:var(--acc);color:#fff;border-radius:12px;padding:13px 22px;font:600 15px/1 Inter;text-decoration:none}
-@media(max-width:900px){.schemes{grid-template-columns:repeat(2,1fr)}.logos{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.schemes,.logos{grid-template-columns:1fr}.wrap{padding:0 16px}}
+.pick button{background:var(--acc);color:#fff;border:0;border-radius:12px;padding:13px 22px;font:600 15px/1 Inter;cursor:pointer}
+@media(max-width:1080px){.schemes{grid-template-columns:repeat(3,1fr)}.logos{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.schemes{grid-template-columns:repeat(2,1fr)}.logos{grid-template-columns:repeat(2,1fr)}
+  .wrap{padding:0 16px}.prev .body h3{font-size:23px}.prev .ph{padding:14px 16px}.prev .body{padding:24px 16px 28px}}
 </style></head><body>
 
-<div class="top"><div class="wrap"><span>БТИиО, выбор оформления сайта</span></div></div>
+<div class="top"><div class="wrap">БТИиО, выбор оформления сайта</div></div>
 
 <div class="hero"><div class="wrap">
-  <h1>Выберите цвета и логотип</h1>
-  <p class="lede">Ниже шесть цветовых схем и семь знаков. Нажмите на понравившиеся, номера появятся
-  внизу экрана. Достаточно назвать их в переписке, например «цвет 2, логотип 5».</p>
+  <h1>Выберите цвет и знак</h1>
+  <p class="lede">Сначала цвет, потом логотип. Знак сразу перекрашивается в выбранную схему, а сверху
+  видно, как связка выглядит в шапке сайта. Нажмите на понравившееся и назовите номера в чате.</p>
 </div></div>
 
 <section class="sec"><div class="wrap">
+  <p class="eyebrow">Так это будет выглядеть</p>
+  <div class="prev" id="prev"></div>
+</div></section>
+
+<section class="sec"><div class="wrap">
   <p class="eyebrow">Шаг первый</p>
-  <h2>Цветовые схемы</h2>
-  <div class="hint">Каждая карточка это кусочек будущего сайта: шапка, кнопка, текст и акценты.
-  Смотрите не на квадратики с краской, а на то, как выглядит страница целиком.</div>
+  <h2>Двенадцать цветовых схем</h2>
+  <div class="hint">Слева направо в полоске: основной тёмный, акцент, второй акцент и светлый фон.
+  Первые шесть в синей гамме, дальше более строгие и дорогие сочетания с графитом, медью и серебром.</div>
   <div class="schemes" id="schemes"></div>
 </div></section>
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Шаг второй</p>
-  <h2>Знаки на выбор</h2>
-  <div class="hint">Показываю каждый знак крупно, в светлой шапке и в тёмном подвале. Так сразу видно,
-  не потеряется ли он на сайте и в подписи письма.</div>
+  <h2>Десять знаков</h2>
+  <div class="hint">Каждый нарисован по сетке, с одинаковой толщиной линий и выверенными углами.
+  Показываю крупно, в светлой шапке и на тёмном, чтобы сразу видеть, как знак живёт в подписи письма.</div>
   <div class="logos" id="logos"></div>
 </div></section>
 
 <div class="pick"><div class="wrap">
-  <b>Ваш выбор:</b>
   <span class="val" id="pc">цвет не выбран</span>
-  <span class="val" id="pl">логотип не выбран</span>
+  <span class="val" id="pl">знак не выбран</span>
   <span class="sp"></span>
-  <a href="#" id="send">Скопировать выбор</a>
+  <button id="send">Скопировать выбор</button>
 </div></div>
 
 <script>
 var SCHEMES=[
- {n:1,name:"Морской и сталь",note:"строго, дорого, как у крупных фирм",dark:"#123A78",acc:"#1A57B8",soft:"#E9F0FB",second:"#64748B",text:"#0F1B2E"},
- {n:2,name:"Голубой и графит",note:"светлее и современнее",dark:"#1D74D6",acc:"#2E86E0",soft:"#E8F2FD",second:"#33415C",text:"#101B2C"},
- {n:3,name:"Синий и латунь",note:"как сейчас на прототипе",dark:"#12336E",acc:"#1B4DB3",soft:"#EAF0FC",second:"#B0813A",text:"#0B1320"},
- {n:4,name:"Индиго и серебро",note:"спокойный, чуть холодный",dark:"#2B3F87",acc:"#3D57B5",soft:"#EDEFFA",second:"#94A3B8",text:"#111428"},
- {n:5,name:"Небесный и сталь",note:"самый лёгкий, много воздуха",dark:"#1E6FBF",acc:"#3E93E6",soft:"#EAF4FD",second:"#7A8AA0",text:"#0F1D2E"},
- {n:6,name:"Синий и жёлтый",note:"модное сочетание, заметнее всех",dark:"#16357A",acc:"#1B4DB3",soft:"#EAF0FC",second:"#F2B705",text:"#0B1320"}
+ {n:1,name:"Морской и сталь",note:"строго и дорого",dark:"#0F2A55",acc:"#1A57B8",second:"#64748B",soft:"#EAF1FB"},
+ {n:2,name:"Голубой и графит",note:"светлее, современнее",dark:"#123B6B",acc:"#2E86E0",second:"#33415C",soft:"#E8F2FD"},
+ {n:3,name:"Синий и латунь",note:"как на прототипе",dark:"#0B1320",acc:"#1B4DB3",second:"#B0813A",soft:"#EAF0FC"},
+ {n:4,name:"Индиго и серебро",note:"холодный, спокойный",dark:"#1B2450",acc:"#3D57B5",second:"#94A3B8",soft:"#EDEFFA"},
+ {n:5,name:"Небесный и сталь",note:"лёгкий, много воздуха",dark:"#123A6B",acc:"#3E93E6",second:"#7A8AA0",soft:"#EAF4FD"},
+ {n:6,name:"Синий и жёлтый",note:"заметнее всех",dark:"#12275C",acc:"#1B4DB3",second:"#F2B705",soft:"#EAF0FC"},
+ {n:7,name:"Графит и сталь",note:"почти чёрно-белый, премиум",dark:"#14181F",acc:"#3C4650",second:"#8C97A8",soft:"#F0F2F5"},
+ {n:8,name:"Графит и медь",note:"дорогой контраст",dark:"#15191F",acc:"#2B3440",second:"#B87333",soft:"#F2F1EF"},
+ {n:9,name:"Ночной синий и золото",note:"самый статусный",dark:"#0A1430",acc:"#16295E",second:"#C9A227",soft:"#EFF1F7"},
+ {n:10,name:"Сине-зелёный и сталь",note:"свежо, не как у всех",dark:"#0C2E35",acc:"#12756F",second:"#7E9AA0",soft:"#E9F3F2"},
+ {n:11,name:"Синий и мята",note:"технологичный",dark:"#101C3A",acc:"#2050C8",second:"#31C9A8",soft:"#E9EFFC"},
+ {n:12,name:"Бордо и графит",note:"юридический, солидный",dark:"#1B1418",acc:"#7B1E2B",second:"#5C6572",soft:"#F5F0F1"}
 ];
-var LOGOS=[
- {n:1,name:"Кристалл",note:"грани разной плотности",svg:function(c){return '<path d="M32 5l27 15.5v23L32 59 5 43.5v-23z" fill="'+c.soft+'"/><path d="M32 5l27 15.5L32 36 5 20.5z" fill="'+c.acc+'"/><path d="M32 36v23L5 43.5v-23z" fill="'+c.acc+'" opacity=".55"/><path d="M32 36v23l27-15.5v-23z" fill="'+c.second+'" opacity=".92"/>'}},
- {n:2,name:"Плоский куб",note:"чистая геометрия",svg:function(c){return '<path d="M32 6l24 13v26L32 58 8 45V19z" fill="'+c.soft+'"/><path d="M32 6l24 13-24 13L8 19z" fill="'+c.second+'"/><path d="M32 32v26L8 45V19z" fill="'+c.acc+'"/><path d="M32 32v26l24-13V19z" fill="'+c.dark+'"/>'}},
- {n:3,name:"Монограмма Б",note:"буква бренда",svg:function(c){return '<path d="M14 8h30v8H24v10h9a14 14 0 0 1 0 28H14z" fill="'+c.acc+'"/><path d="M24 34h9a6 6 0 0 1 0 12h-9z" fill="#fff"/><path d="M44 8l10 5.5V24l-10-5.5z" fill="'+c.second+'"/>'}},
- {n:4,name:"Щит оценки",note:"про надёжность и страховку",svg:function(c){return '<path d="M32 6l22 8v16c0 12-8.6 21.4-22 25-13.4-3.6-22-13-22-25V14z" fill="'+c.acc+'"/><path d="M22 32l7 7 13-13" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 6l22 8-22 8-22-8z" fill="'+c.second+'"/>'}},
- {n:5,name:"Дом и рост",note:"недвижимость плюс стоимость",svg:function(c){return '<path d="M10 30L32 12l22 18v24H10z" fill="'+c.soft+'"/><path d="M10 30L32 12l22 18-22-4z" fill="'+c.second+'"/><path d="M20 48V38M30 48V30M40 48V34M50 48V26" stroke="'+c.acc+'" stroke-width="5" stroke-linecap="round" fill="none"/>'}},
- {n:6,name:"Печать",note:"как оттиск на отчёте",svg:function(c){return '<circle cx="32" cy="32" r="26" fill="'+c.soft+'"/><circle cx="32" cy="32" r="20" fill="none" stroke="'+c.acc+'" stroke-width="3"/><path d="M24 22h9a9 9 0 0 1 0 18h-9z" fill="'+c.acc+'"/><path d="M24 22h13" stroke="'+c.second+'" stroke-width="4" stroke-linecap="round"/>'}},
- {n:7,name:"Обмерный угол",note:"чертёжный знак, про инвентаризацию",svg:function(c){return '<path d="M14 50V16h34" stroke="'+c.acc+'" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 42l22-18" stroke="'+c.second+'" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="46" cy="22" r="6" fill="'+c.acc+'"/>'}}
-];
-var cur=SCHEMES[2], pickC=null, pickL=null;
 
-function schemeCard(s){
-  return '<div class="sch" data-n="'+s.n+'">'+
-   '<div class="demo"><div class="bar" style="background:'+s.dark+'"><b>БТИиО</b><span class="sp"></span>'+
-   '<span class="btn" style="color:'+s.dark+'">Заказать</span></div>'+
-   '<div class="body"><div class="t w1" style="background:'+s.text+'"></div>'+
-   '<div class="t w2" style="background:'+s.text+'"></div>'+
-   '<div class="chips"><i style="background:'+s.acc+'"></i><i style="background:'+s.second+'"></i>'+
-   '<i style="background:'+s.soft+'"></i></div></div></div>'+
-   '<div class="cap"><span><b>'+s.name+'</b><br><span>'+s.note+'</span></span><span class="num">цвет '+s.n+'</span></div></div>';
+/* Знаки. Сетка 64 на 64, поле безопасности 4, одинаковая толщина линий.
+   d(c, dark): на тёмном фоне тёмные контуры становятся белыми, плашки светлеют. */
+function S(c,dark){return dark
+  ? {ink:"#FFFFFF", soft:"rgba(255,255,255,.20)", plate:c.acc, line:"#FFFFFF"}
+  : {ink:c.dark,    soft:c.soft,                  plate:c.dark, line:c.dark}}
+var LOGOS=[
+ {n:1,name:"Огранка",note:"камень, про стоимость",
+  d:function(c,k){var s=S(c,k);return '<path d="M32 4 60 32 32 60 4 32Z" fill="'+s.soft+'"/>'+
+   '<path d="M32 4 46 18 32 32 18 18Z" fill="'+c.second+'"/>'+
+   '<path d="M4 32 18 18 32 32 32 60Z" fill="'+c.acc+'"/>'+
+   '<path d="M60 32 46 18 32 32 32 60Z" fill="'+s.ink+'"/>'}},
+ {n:2,name:"Монограмма в квадрате",note:"буква бренда по сетке",
+  d:function(c,k){var s=S(c,k);return '<rect x="5" y="5" width="54" height="54" rx="15" fill="'+s.plate+'"/>'+
+   '<path d="M23 19h20" stroke="'+c.second+'" stroke-width="4.6" stroke-linecap="round"/>'+
+   '<path d="M23 19v26h11a9 9 0 0 0 0-18H23" stroke="#fff" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>'}},
+ {n:3,name:"Печать оценщика",note:"как оттиск на отчёте",
+  d:function(c,k){var s=S(c,k);return '<circle cx="32" cy="32" r="28" fill="none" stroke="'+s.line+'" stroke-width="2" opacity="'+(k?".55":"1")+'"/>'+
+   '<circle cx="32" cy="32" r="22" fill="'+c.acc+'"/>'+
+   '<path d="M32 2v6M32 56v6M2 32h6M56 32h6" stroke="'+c.second+'" stroke-width="3" stroke-linecap="round"/>'+
+   '<path d="M26 22h13" stroke="'+c.second+'" stroke-width="3.6" stroke-linecap="round"/>'+
+   '<path d="M26 22v20h8a6.5 6.5 0 0 0 0-13h-8" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>'}},
+ {n:4,name:"Изометрия линией",note:"объект одной толщиной",
+  d:function(c,k){var s=S(c,k);return '<path d="M32 6 55 19.5v25L32 58 9 44.5v-25Z" fill="none" stroke="'+s.line+'" stroke-width="3.4" stroke-linejoin="round"/>'+
+   '<path d="M32 32 55 19.5M32 32 9 19.5M32 32v26" fill="none" stroke="'+s.line+'" stroke-width="3.4" stroke-linejoin="round"/>'+
+   '<path d="M32 6 55 19.5 32 32 9 19.5Z" fill="'+c.second+'"/>'}},
+ {n:5,name:"План и рост",note:"недвижимость плюс стоимость",
+  d:function(c,k){var s=S(c,k);return '<rect x="6" y="6" width="52" height="52" rx="14" fill="none" stroke="'+s.line+'" stroke-width="3.4"/>'+
+   '<path d="M18 46V34M28 46V26M38 46V32M48 46V20" stroke="'+(k?"#FFFFFF":c.acc)+'" stroke-width="4.4" stroke-linecap="round"/>'+
+   '<circle cx="48" cy="20" r="4.6" fill="'+c.second+'"/>'}},
+ {n:6,name:"Обмерный угол",note:"чертёжный знак",
+  d:function(c,k){var s=S(c,k);return '<path d="M13 51V13h38" fill="none" stroke="'+s.line+'" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'+
+   '<path d="M22 43 43 22" fill="none" stroke="'+(k?c.second:c.acc)+'" stroke-width="5" stroke-linecap="round"/>'+
+   '<circle cx="46" cy="19" r="6" fill="'+(k?"#FFFFFF":c.second)+'"/>'}},
+ {n:7,name:"Щит с гранью",note:"надёжность и страховка",
+  d:function(c,k){return '<path d="M32 5 56 14v18c0 13.5-9.6 23.6-24 27C17.6 55.6 8 45.5 8 32V14Z" fill="'+c.acc+'"/>'+
+   '<path d="M32 5 56 14 32 23 8 14Z" fill="'+c.second+'"/>'+
+   '<path d="M22 33.5 29 40.5 43 26.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'}},
+ {n:8,name:"Два листа",note:"отчёт и заключение",
+  d:function(c,k){return '<rect x="10" y="8" width="34" height="44" rx="6" fill="'+c.second+'"/>'+
+   '<rect x="20" y="14" width="34" height="44" rx="6" fill="'+c.acc+'"/>'+
+   '<path d="M28 27h18M28 35h18M28 43h11" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>'}},
+ {n:9,name:"Ромб с контуром",note:"минимализм, знак-огранка",
+  d:function(c,k){var s=S(c,k);return '<path d="M32 6 58 32 32 58 6 32Z" fill="none" stroke="'+s.line+'" stroke-width="3.6" stroke-linejoin="round"/>'+
+   '<path d="M32 17 47 32 32 47 17 32Z" fill="'+c.acc+'"/>'+
+   '<path d="M32 17 47 32 32 32Z" fill="'+c.second+'"/>'}},
+ {n:10,name:"Столбцы в круге",note:"оценка и аналитика",
+  d:function(c,k){var s=S(c,k);return '<circle cx="32" cy="32" r="27" fill="'+s.plate+'"/>'+
+   '<path d="M21 41V29M32 41V21M43 41V33" stroke="#fff" stroke-width="4.6" stroke-linecap="round"/>'+
+   '<circle cx="32" cy="21" r="4.4" fill="'+c.second+'"/>'}}
+];
+
+var pickC=3, pickL=1;
+function cur(){return SCHEMES[pickC-1]}
+function svg(l,c,size,dark){return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'">'+l.d(c,!!dark)+'</svg>'}
+
+function drawPrev(){
+  var c=cur(), l=LOGOS[pickL-1];
+  document.getElementById('prev').innerHTML=
+   '<div class="ph">'+svg(l,c,44)+'<span class="nm"><b>БТИиО</b><i>оценка и экспертиза</i></span>'+
+   '<span class="sp"></span><span class="cta" style="background:'+c.acc+'">Заказать оценку</span></div>'+
+   '<div class="body"><h3>Оценка имущества для банков, судов и нотариусов</h3>'+
+   '<p>Готовим отчёт по закону 135-ФЗ и федеральным стандартам оценки. Недвижимость, транспорт, бизнес и ущерб.</p>'+
+   '<div class="row"><span class="b1" style="background:'+c.acc+'">Рассчитать стоимость</span>'+
+   '<span class="b2">+7 495 741-60-71</span></div></div>'+
+   '<div class="foot" style="background:'+c.dark+'">'+svg(l,c,30,true)+'<b>БТИиО</b></div>';
 }
-function logoCard(l){
-  return '<div class="lg" data-n="'+l.n+'">'+
-   '<div class="big"><svg viewBox="0 0 64 64">'+l.svg(cur)+'</svg></div>'+
-   '<div class="row"><svg viewBox="0 0 64 64">'+l.svg(cur)+'</svg><b>БТИиО</b></div>'+
-   '<div class="row dark"><svg viewBox="0 0 64 64">'+l.svg(cur)+'</svg><b>БТИиО</b></div>'+
-   '<div class="cap"><b>'+l.name+'</b><span class="num">знак '+l.n+'</span></div></div>';
-}
-function draw(){
-  document.getElementById('schemes').innerHTML=SCHEMES.map(schemeCard).join('');
-  document.getElementById('logos').innerHTML=LOGOS.map(logoCard).join('');
-  if(pickC) document.querySelector('.sch[data-n="'+pickC+'"]').classList.add('on');
-  if(pickL) document.querySelector('.lg[data-n="'+pickL+'"]').classList.add('on');
+function drawSchemes(){
+  document.getElementById('schemes').innerHTML=SCHEMES.map(function(s){
+    return '<div class="sch'+(s.n===pickC?' on':'')+'" data-n="'+s.n+'">'+
+     '<div class="strip"><i style="background:'+s.dark+'"></i><i style="background:'+s.acc+'"></i>'+
+     '<i style="background:'+s.second+'"></i><i style="background:'+s.soft+'"></i></div>'+
+     '<div class="cap"><span><b>'+s.name+'</b><span>'+s.note+'</span></span>'+
+     '<span class="num">цвет '+s.n+'</span></div></div>'}).join('');
   document.querySelectorAll('.sch').forEach(function(el){
-    el.addEventListener('click',function(){
-      pickC=+el.dataset.n; cur=SCHEMES[pickC-1];
-      document.documentElement.style.setProperty('--acc',cur.acc);
-      draw(); upd();
-    });
-  });
+    el.addEventListener('click',function(){pickC=+el.dataset.n;
+      document.documentElement.style.setProperty('--acc',cur().acc);all()})});
+}
+function drawLogos(){
+  var c=cur();
+  document.getElementById('logos').innerHTML=LOGOS.map(function(l){
+    return '<div class="lg'+(l.n===pickL?' on':'')+'" data-n="'+l.n+'">'+
+     '<div class="big">'+svg(l,c,62)+'</div>'+
+     '<div class="row">'+svg(l,c,26)+'<b>БТИиО</b></div>'+
+     '<div class="row dark">'+svg(l,c,26,true)+'<b>БТИиО</b></div>'+
+     '<div class="cap"><b>'+l.name+'</b><span class="num">знак '+l.n+'</span></div></div>'}).join('');
   document.querySelectorAll('.lg').forEach(function(el){
-    el.addEventListener('click',function(){ pickL=+el.dataset.n; draw(); upd(); });
-  });
+    el.addEventListener('click',function(){pickL=+el.dataset.n;all()})});
 }
-function upd(){
-  document.getElementById('pc').textContent=pickC?('цвет '+pickC+', '+SCHEMES[pickC-1].name):'цвет не выбран';
-  document.getElementById('pl').textContent=pickL?('знак '+pickL+', '+LOGOS[pickL-1].name):'логотип не выбран';
+function all(){
+  drawPrev();drawSchemes();drawLogos();
+  document.getElementById('pc').textContent='цвет '+pickC+', '+cur().name;
+  document.getElementById('pl').textContent='знак '+pickL+', '+LOGOS[pickL-1].name;
 }
-document.getElementById('send').addEventListener('click',function(e){
-  e.preventDefault();
-  var t='Наш выбор: '+(pickC?('цвет '+pickC+' ('+SCHEMES[pickC-1].name+')'):'цвет не выбран')+', '+
-        (pickL?('знак '+pickL+' ('+LOGOS[pickL-1].name+')'):'логотип не выбран');
+document.getElementById('send').addEventListener('click',function(){
+  var t='Наш выбор: цвет '+pickC+' ('+cur().name+'), знак '+pickL+' ('+LOGOS[pickL-1].name+')';
   if(navigator.clipboard) navigator.clipboard.writeText(t);
   this.textContent='Скопировано, пришлите в чат';
-  setTimeout(function(){document.getElementById('send').textContent='Скопировать выбор'},2500);
+  var b=this; setTimeout(function(){b.textContent='Скопировать выбор'},2500);
 });
-draw(); upd();
+all();
 </script>
 </body></html>
