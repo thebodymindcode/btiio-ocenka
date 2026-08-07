@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Независимая оценка ущерба после ДТП в Москве", "description": "Независимая экспертиза после ДТП: расчёт восстановительного ремонта и УТС, заключение для страховой, финуполномоченного и суда. Москва и регионы.", "areaServed": "Россия", "provider": {"@type": "LocalBusiness", "name": "ООО «БТИиО»", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Садовническая набережная, д. 79"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://btiio.ru/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://btiio.ru/uslugi/"}, {"@type": "ListItem", "position": 3, "name": "Ущерб", "item": "https://btiio.ru/uslugi/ocenka-ushcherba/"}, {"@type": "ListItem", "position": 4, "name": "Независимая оценка ущерба после ДТП в Москве"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит независимая экспертиза после ДТП", "acceptedAnswer": {"@type": "Answer", "text": "Фиксированного тарифа нет. Цена зависит от объёма повреждений, нужна ли разборка для поиска скрытых дефектов, считается ли утрата товарной стоимости и нужен ли второй расчёт по рыночным ценам для взыскания с виновника. Стоимость называем, когда увидим документы о ДТП и фотографии машины."}}, {"@type": "Question", "name": "Что делать, если страховая занизила выплату", "acceptedAnswer": {"@type": "Answer", "text": "Порядок такой: направить страховщику претензию с независимым расчётом, при отказе обратиться к финансовому уполномоченному по закону от 04.06.2018 № 123-ФЗ и только после этого идти в суд. Для потребителя этот порядок обязателен, иск без обращения к финансовому уполномоченному суд оставит без рассмотрения."}}, {"@type": "Question", "name": "Можно ли взыскать разницу с виновника ДТП", "acceptedAnswer": {"@type": "Answer", "text": "Да. Страховщик отвечает в пределах 400 000 ₽ по вреду имуществу (статья 7 закона от 25.04.2002 № 40-ФЗ) и считает по Единой методике с учётом износа деталей. Всё, что сверх выплаты, взыскивается с причинителя вреда по статьям 15, 1064 и 1072 ГК, для этого и нужен второй расчёт по рыночным ценам."}}, {"@type": "Question", "name": "Что такое УТС и когда её платят", "acceptedAnswer": {"@type": "Answer", "text": "Утрата товарной стоимости это снижение цены машины из-за того, что она побывала в ремонте после аварии. Она считается частью реального ущерба и возмещается в рамках ОСАГО, а не сверх лимита. Положена не всем: есть ограничения по возрасту автомобиля и накопленному износу."}}, {"@type": "Question", "name": "Нужно ли приглашать виновника на осмотр", "acceptedAnswer": {"@type": "Answer", "text": "Да, телеграммой с уведомлением о вручении и заранее, чтобы у него была возможность приехать. Иначе в суде он заявит, что осмотр прошёл без него, и попросит назначить экспертизу заново."}}, {"@type": "Question", "name": "По каким правилам считается ремонт по ОСАГО", "acceptedAnswer": {"@type": "Answer", "text": "По Единой методике, утверждённой Положением Банка России от 04.03.2021 № 755-П. С 11 июля 2026 года она работает с поправками из Указания Банка России от 14.05.2026 № 7352-У: изменился порядок учёта дешёвых аналогов запчастей, расходных материалов и одноразовых деталей, а справочники цен обновляются чаще прежнего."}}]}</script>
 </head>
 <body>
@@ -109,14 +110,15 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
     <input type="hidden" name="tema" value="Независимая оценка ущерба после ДТП в Москве">
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с <a href="/btiio-ocenka/politika/">политикой конфиденциальности</a></span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 

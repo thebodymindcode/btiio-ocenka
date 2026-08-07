@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Оценка квартиры для ипотеки в Москве: отчёт для банка", "description": "Отчёт об оценке квартиры для ипотеки по 135-ФЗ, ФСО № 7 и ФСО № 9: осмотр, фотографии под требования банка, электронный файл. Цена от 4 500 ₽.", "areaServed": "Россия", "provider": {"@type": "LocalBusiness", "name": "ООО «БТИиО»", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Садовническая набережная, д. 79"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://btiio.ru/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://btiio.ru/uslugi/"}, {"@type": "ListItem", "position": 3, "name": "Цели оценки", "item": "https://btiio.ru/uslugi/ocenka-po-celyam/"}, {"@type": "ListItem", "position": 4, "name": "Оценка квартиры для ипотеки в Москве: отчёт для банка"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит оценка квартиры для ипотеки", "acceptedAnswer": {"@type": "Answer", "text": "Квартира до 60 кв.м от 4 500 ₽, до 85 кв.м от 6 000 ₽, нестандартная планировка от 85 кв.м от 10 000 ₽, комната от 4 500 ₽. Цена зависит от площади и удалённости квартиры, а не от суммы кредита."}}, {"@type": "Question", "name": "Какие документы нужны для оценки квартиры для ипотеки", "acceptedAnswer": {"@type": "Answer", "text": "Паспорт заёмщика, выписка из ЕГРН, документ-основание права продавца и поэтажный план с экспликацией. По новостройке добавляются договор долевого участия и акт приёма-передачи. Название банка лучше сообщить сразу: перечни фотографий у кредиторов разные."}}, {"@type": "Question", "name": "Примет ли банк отчёт от любой оценочной компании", "acceptedAnswer": {"@type": "Answer", "text": "Банк вправе предъявлять требования к содержанию отчёта и к оценщику: членство в саморегулируемой организации, действующий квалификационный аттестат, застрахованная ответственность. Заказывать отчёт только у партнёров банка закон не обязывает, а ограничение выбора оценщика списком аккредитованных компаний антимонопольная служба относит к нарушениям конкуренции. На практике проще назвать банк заранее и собрать отчёт сразу под его требования."}}, {"@type": "Question", "name": "Нужен ли осмотр квартиры для ипотеки", "acceptedAnswer": {"@type": "Answer", "text": "Да, осмотр с фотофиксацией практически всегда обязателен: банку нужны снимки реального состояния и подтверждение, что планировка совпадает с планом БТИ. Отчёт без осмотра кредиторы почти не принимают."}}, {"@type": "Question", "name": "Сколько действует отчёт об оценке для банка", "acceptedAnswer": {"@type": "Answer", "text": "По статье 12 закона 135-ФЗ стоимость рекомендуется для сделки шесть месяцев с даты составления отчёта. Большинство банков ориентируется на этот срок, отдельные просят документ свежее. Если сделка затянулась, отчёт актуализируют на новую дату."}}, {"@type": "Question", "name": "Что будет, если оценка окажется ниже цены договора", "acceptedAnswer": {"@type": "Answer", "text": "Банк рассчитает кредит от меньшей из двух величин, поэтому разницу закрывают увеличенным первоначальным взносом или пересматривают цену с продавцом. Иногда причина в наборе аналогов или в неучтённых улучшениях квартиры, тогда расчёт уточняют по документам. Отдельная частая причина расхождения это неузаконенная перепланировка: банк вправе отказать в залоге до её оформления."}}]}</script>
 </head>
 <body>
@@ -109,14 +110,15 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
     <input type="hidden" name="tema" value="Оценка квартиры для ипотеки в Москве: отчёт для банка">
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с <a href="/btiio-ocenka/politika/">политикой конфиденциальности</a></span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 

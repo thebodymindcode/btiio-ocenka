@@ -146,6 +146,36 @@ function goCat(e){
   });
 })();
 
+// ---------- отправка заявки на почту компании ----------
+(function(){
+  var f=document.getElementById('zform');
+  if(!f) return;
+  var btn=document.getElementById('zbtn'), msg=document.getElementById('zmsg');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var agree=f.querySelector('.agree input');
+    if(agree && !agree.checked){ msg.className='zmsg err'; msg.textContent='Отметьте согласие на обработку данных'; return; }
+    var fd=new FormData(f);
+    fd.append('_subject','Заявка с сайта БТИ и ОЦЕНКИ');
+    fd.append('_page', location.pathname);
+    var tema=f.querySelector('input[name="tema"]');
+    if(tema) fd.append('service_page', tema.value);
+    btn.disabled=true; var old=btn.textContent; btn.textContent='Отправляем…';
+    msg.className='zmsg'; msg.textContent='';
+    fetch(BASE+'/send.php',{method:'POST',body:fd})
+      .then(function(r){return r.json().catch(function(){return {ok:r.ok}}) })
+      .then(function(d){
+        if(d && d.ok){ f.reset(); msg.className='zmsg ok';
+          msg.textContent='Заявка ушла. Мы свяжемся с вами по указанному телефону.'; }
+        else { msg.className='zmsg err';
+          msg.textContent=(d && d.error) ? d.error : 'Не отправилось. Позвоните нам по телефону +7 495 741-60-71'; }
+      })
+      .catch(function(){ msg.className='zmsg err';
+        msg.textContent='Не отправилось. Позвоните нам по телефону +7 495 741-60-71'; })
+      .then(function(){ btn.disabled=false; btn.textContent=old; });
+  });
+})();
+
 // ---------- вопросы ----------
 document.querySelectorAll('.q button').forEach(function(b){
   b.addEventListener('click',function(){b.parentNode.classList.toggle('open')});

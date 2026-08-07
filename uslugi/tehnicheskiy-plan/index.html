@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Технический план здания, помещения и сооружения", "description": "Технический план здания, помещения, части помещения для кадастрового учёта в ЕГРН: обмеры, координаты, XML с подписью инженера, подача в Росреестр.", "areaServed": "Россия", "provider": {"@type": "LocalBusiness", "name": "ООО «БТИиО»", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Садовническая набережная, д. 79"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://btiio.ru/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://btiio.ru/uslugi/"}, {"@type": "ListItem", "position": 3, "name": "Техническая инвентаризация", "item": "https://btiio.ru/uslugi/tehnicheskaya-inventarizaciya/"}, {"@type": "ListItem", "position": 4, "name": "Технический план здания, помещения и сооружения"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Кто вправе готовить технический план?", "acceptedAnswer": {"@type": "Answer", "text": "Только кадастровый инженер: квалификационный аттестат, членство в саморегулируемой организации, страхование ответственности. Статус и обязанности такого специалиста заданы Федеральным законом от 24.07.2007 № 221-ФЗ «О кадастровой деятельности». Документ без его электронной подписи Росреестр не примет."}}, {"@type": "Question", "name": "Чем технический план отличается от техпаспорта БТИ?", "acceptedAnswer": {"@type": "Answer", "text": "Технический план сделан под ЕГРН: координаты, формат XML, подпись кадастрового инженера, статья 24 закона 218-ФЗ. Техпаспорт описывает объект для перепланировки, банка или суда и на кадастровый учёт не идёт. Заменить один документ другим не выйдет, задачи разные."}}, {"@type": "Question", "name": "Нужен ли технический план после перепланировки?", "acceptedAnswer": {"@type": "Answer", "text": "Да, когда изменились площадь, конфигурация или состав помещений. С 1 апреля 2024 года по Федеральному закону от 19.12.2023 № 608-ФЗ перепланировка считается завершённой со дня внесения изменений в ЕГРН, это часть 3 статьи 28 ЖК РФ. Орган, согласовавший перепланировку, сам направляет заявление в Росреестр не позднее пяти рабочих дней с даты утверждения акта приёмочной комиссии по части 1.10 статьи 19 закона 218-ФЗ."}}, {"@type": "Question", "name": "Зачем технический план на часть помещения?", "acceptedAnswer": {"@type": "Answer", "text": "Чтобы зарегистрировать долгосрочную аренду части здания или помещения. Росреестр вносит сведения о такой части в ЕГРН, а без графики с обозначением границ части и её площадью регистрация договора встанет."}}, {"@type": "Question", "name": "Что делать, если учёт приостановили?", "acceptedAnswer": {"@type": "Answer", "text": "Читать уведомление: в нём перечислены норма и конкретное замечание. Чаще всего это расхождение с проектом, ошибки в координатах, нехватка документа-основания или несходство площадей. Учёт приостанавливают на срок до трёх месяцев, за это время документ дорабатывается и подаётся заново."}}, {"@type": "Question", "name": "Технический план делают на бумаге?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, он готовится в электронном виде, файлом XML с усиленной квалифицированной подписью кадастрового инженера. Бумажный экземпляр оформляют отдельно, по договору, для внутренних нужд заказчика."}}]}</script>
 </head>
 <body>
@@ -109,14 +110,15 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
     <input type="hidden" name="tema" value="Технический план здания, помещения и сооружения">
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с <a href="/btiio-ocenka/politika/">политикой конфиденциальности</a></span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 

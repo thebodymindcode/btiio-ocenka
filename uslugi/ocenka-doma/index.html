@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Оценка жилого дома и коттеджа в Москве и области", "description": "Независимая оценка жилого дома, коттеджа, дачи и хозпостроек вместе с участком. Отчёт по 135-ФЗ для банка, суда, наследства. Цена от 12 000 ₽.", "areaServed": "Россия", "provider": {"@type": "LocalBusiness", "name": "ООО «БТИиО»", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Садовническая набережная, д. 79"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://btiio.ru/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://btiio.ru/uslugi/"}, {"@type": "ListItem", "position": 3, "name": "Недвижимость", "item": "https://btiio.ru/uslugi/ocenka-nedvizhimosti/"}, {"@type": "ListItem", "position": 4, "name": "Оценка жилого дома и коттеджа в Москве и области"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит оценка дома", "acceptedAnswer": {"@type": "Answer", "text": "Дом до 100 кв.м от 12 000 ₽, до 300 кв.м от 15 000 ₽, до 1000 кв.м от 24 000 ₽, свыше 1000 кв.м от 32 000 ₽. Хозпостройки считаются отдельно, от 7 000 ₽. На цену влияют площадь, удалённость участка и число строений на нём."}}, {"@type": "Question", "name": "Входит ли земельный участок в оценку дома", "acceptedAnswer": {"@type": "Answer", "text": "Да, дом и участок оцениваются вместе. По подпункту 5 пункта 1 статьи 1 Земельного кодекса действует единство судьбы участка и построек на нём, а по статье 273 Гражданского кодекса право на землю переходит к покупателю дома. Отдельно землю оценивают, когда дома ещё нет."}}, {"@type": "Question", "name": "Какие документы нужны для оценки дома", "acceptedAnswer": {"@type": "Answer", "text": "Выписки из ЕГРН на дом и участок, документ-основание права, технический паспорт или техплан, паспорт собственника. Полезны договоры на газ и электричество: подключённые мощности заметно двигают стоимость."}}, {"@type": "Question", "name": "Что делать, если баня и гараж не зарегистрированы", "acceptedAnswer": {"@type": "Answer", "text": "Оценщик опишет их как фактически существующие и внесёт в отчёт допущение об отсутствии регистрации. Для наследства и продажи это обычно приемлемо, а вот банк такие постройки в залог не возьмёт и в расчёт стоимости кредита они не пойдут."}}, {"@type": "Question", "name": "Оценивают ли недостроенный дом", "acceptedAnswer": {"@type": "Answer", "text": "Оценивают. В расчёт идёт степень готовности по конструктивным элементам: фундамент, коробка, кровля, инженерия, осмотр здесь обязателен. Для сделки и для залога недострой должен стоять на кадастровом учёте как объект незавершённого строительства и иметь зарегистрированное право, иначе отчёт работает только в переговорах и во внутреннем учёте."}}, {"@type": "Question", "name": "Сколько действует отчёт об оценке дома", "acceptedAnswer": {"@type": "Answer", "text": "По статье 12 закона 135-ФЗ итоговая стоимость рекомендуется для сделки шесть месяцев с даты составления отчёта. Для наследства дата оценки привязана ко дню открытия наследства и не меняется, а вот сам отчёт нотариусу лучше подавать свежим."}}]}</script>
 </head>
 <body>
@@ -109,14 +110,15 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
     <input type="hidden" name="tema" value="Оценка жилого дома и коттеджа в Москве и области">
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с <a href="/btiio-ocenka/politika/">политикой конфиденциальности</a></span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 

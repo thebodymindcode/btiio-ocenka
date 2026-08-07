@@ -1,0 +1,33 @@
+# Чистые адреса, кэш и защита служебных файлов. Сайт БТИ и ОЦЕНКИ.
+AddDefaultCharset UTF-8
+DirectoryIndex index.html index.php
+ErrorDocument 404 /404.html
+
+# Журнал заявок наружу не отдаём
+<FilesMatch "\.(log|bak)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # адрес без слэша на конце ведём к слэшу, чтобы не плодить дубли для поиска
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !\.(php|html|css|js|svg|png|jpg|webp|xml|txt|ico)$
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ /$1/ [R=301,L]
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType image/png "access plus 180 days"
+  ExpiresByType image/jpeg "access plus 180 days"
+  ExpiresByType image/svg+xml "access plus 180 days"
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>

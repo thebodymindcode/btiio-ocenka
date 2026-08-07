@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "ООО «БТИиО»", "description": "Независимая оценка недвижимости, транспорта, оборудования и бизнеса, судебная оценочная экспертиза и оспаривание кадастровой стоимости. Работаем по всей России.", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "url": "https://btiio.ru", "areaServed": "Россия", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "postalCode": "115035", "streetAddress": "Садовническая набережная, д. 79"}}</script>
 </head>
 <body>
@@ -304,19 +305,20 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
-    <select class="full" aria-label="Что оцениваем">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+    <select class="full" name="service" aria-label="Что оцениваем">
       <option>Что оцениваем</option><option>Квартира, комната, доля</option><option>Дом, участок</option>
       <option>Коммерческая недвижимость</option><option>Транспорт или спецтехника</option>
       <option>Оборудование</option><option>Бизнес, доля, акции</option><option>Ущерб</option>
       <option>Кадастровая стоимость</option><option>Судебная экспертиза</option>
     </select>
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: для чего нужна оценка, адрес или кадастровый номер"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: для чего нужна оценка, адрес или кадастровый номер"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с политикой конфиденциальности</span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 

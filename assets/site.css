@@ -338,6 +338,9 @@ input:focus,select:focus,textarea:focus{outline:2px solid var(--acc-s);border-co
 .form .full{grid-column:1/-1}
 .agree{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--mut)}
 .agree input{width:19px;height:19px;flex:0 0 19px;margin-top:2px}
+.zmsg{margin:12px 0 0;font-size:15px;display:none}
+.zmsg.ok{display:block;color:#1E6B44}
+.zmsg.err{display:block;color:#b03a3a}
 
 /* ------- футер ------- */
 footer{background:var(--navy);color:rgba(255,255,255,.75);padding:64px 0 34px;font-size:15px}

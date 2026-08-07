@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="/btiio-ocenka/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/btiio-ocenka/assets/site.css">
+<script>window.SITE_BASE="/btiio-ocenka"</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "Оценка ущерба от залива квартиры в Москве", "description": "Независимая оценка ущерба после залива: осмотр, расчёт восстановительного ремонта, отчёт для претензии, страховой и суда. Выезд специалиста.", "areaServed": "Россия", "provider": {"@type": "LocalBusiness", "name": "ООО «БТИиО»", "telephone": "+7 495 741-60-71", "email": "info@btiio.ru", "address": {"@type": "PostalAddress", "addressLocality": "Москва", "streetAddress": "Садовническая набережная, д. 79"}}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://btiio.ru/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://btiio.ru/uslugi/"}, {"@type": "ListItem", "position": 3, "name": "Ущерб", "item": "https://btiio.ru/uslugi/ocenka-ushcherba/"}, {"@type": "ListItem", "position": 4, "name": "Оценка ущерба от залива квартиры в Москве"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Сколько стоит оценка ущерба от залива", "acceptedAnswer": {"@type": "Answer", "text": "Твёрдого тарифа здесь нет. Работа считается от площади пострадавших помещений, числа комнат, объёма испорченного имущества и удалённости адреса. Отдельно влияют дорогая отделка, необходимость вскрытия конструкций и участие специалиста в заседании. Стоимость называем, когда увидим адрес, площадь, акт и фотографии."}}, {"@type": "Question", "name": "Нужен ли акт управляющей компании", "acceptedAnswer": {"@type": "Answer", "text": "Он сильно усиливает позицию, потому что фиксирует факт залива, дату и причину. По пункту 152 Правил, утверждённых постановлением Правительства от 06.05.2011 № 354, акт о причинении ущерба составляет исполнитель услуги, в Москве по остальным случаям действует трёхдневный срок. Если акт не составили или составили формально, ущерб доказывают фотографиями, свидетелями и осмотром специалиста."}}, {"@type": "Question", "name": "Что делать, если сосед не согласен с суммой", "acceptedAnswer": {"@type": "Answer", "text": "Приглашать его на осмотр телеграммой с уведомлением и вести расчёт открыто. Если он всё равно спорит, спор уходит в суд, там сосед вправе заявить ходатайство о судебной экспертизе, и по размеру ущерба решающим станет её заключение."}}, {"@type": "Question", "name": "Кто отвечает, если протекло с общего стояка", "acceptedAnswer": {"@type": "Answer", "text": "Управляющая организация. Стояки и первые отключающие устройства на ответвлениях в квартиру относятся к общему имуществу дома по Правилам, утверждённым постановлением Правительства от 13.08.2006 № 491, а за их содержание отвечает управляющая организация по статье 161 ЖК. Если течь началась после первого крана внутри квартиры, отвечает собственник по статье 210 ГК."}}, {"@type": "Question", "name": "Войдут ли в расчёт мебель и техника", "acceptedAnswer": {"@type": "Answer", "text": "Да. Считаются и отделка, и повреждённое имущество: мебель, техника, ковры, книги, документы. По вещам, которые ремонту не подлежат, расчёт идёт с учётом износа, поэтому чеки и паспорта на технику пригодятся."}}, {"@type": "Question", "name": "Сколько времени есть на обращение в суд", "acceptedAnswer": {"@type": "Answer", "text": "Три года со дня, когда вы узнали о нарушении права и о том, кто за него отвечает (статьи 196 и 200 ГК). Затягивать не стоит по другой причине: следы залива уходят, ремонт делается, и доказывать размер ущерба становится тяжелее с каждым месяцем."}}]}</script>
 </head>
 <body>
@@ -109,14 +110,15 @@
 <section class="sec tint" id="zayavka"><div class="wrap">
   <div class="sechead"><p class="eyebrow">Заявка</p><h2>Расскажите про объект</h2>
     <p class="lede">Опишите задачу, и мы скажем, какая оценка нужна и сколько будут стоить работы.</p></div>
-  <form class="form" onsubmit="return false">
-    <input placeholder="Как к вам обращаться" aria-label="Имя">
-    <input type="tel" placeholder="Телефон" aria-label="Телефон">
-    <input type="email" placeholder="Почта" aria-label="Почта">
+  <form class="form" id="zform" novalidate>
+    <input name="name" placeholder="Как к вам обращаться" aria-label="Имя" required>
+    <input name="phone" type="tel" placeholder="Телефон" aria-label="Телефон" required>
+    <input name="email" type="email" placeholder="Почта" aria-label="Почта">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
     <input type="hidden" name="tema" value="Оценка ущерба от залива квартиры в Москве">
-    <textarea class="full" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
+    <textarea class="full" name="task" rows="3" placeholder="Коротко о задаче: адрес или кадастровый номер, для чего нужна оценка"></textarea>
     <label class="agree full"><input type="checkbox"><span>Согласен на обработку персональных данных и ознакомлен с <a href="/btiio-ocenka/politika/">политикой конфиденциальности</a></span></label>
-    <div class="full"><button class="btn pri bracket" type="submit">Отправить заявку</button></div>
+    <div class="full"><button class="btn pri bracket" type="submit" id="zbtn">Отправить заявку</button><p class="zmsg" id="zmsg"></p></div>
   </form>
 </div></section>
 
