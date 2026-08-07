@@ -116,8 +116,8 @@ h2{font-size:clamp(21px,2.4vw,29px)}
 
 <section class="sec"><div class="wrap">
   <p class="eyebrow">Шаг второй</p>
-  <h2>Восемь знаков</h2>
-  <div class="hint">Строгая геометрия и две краски, ничего лишнего. Каждый знак показан крупно,
+  <h2>Пять знаков на основе вашего силуэта</h2>
+  <div class="hint">За основу взят ваш силуэт Москвы с титульного листа отчёта, тот самый, по которому вас узнают. Каждый знак показан крупно,
   в шапке с подписью, на тёмном фоне и мелким размером, каким он будет во вкладке браузера.</div>
   <div class="logos" id="logos"></div>
 </div></section>
@@ -148,56 +148,70 @@ function P(c,k){return {solid:c.acc, line:k?"#FFFFFF":c.dark, steel:k?"rgba(255,
   cut:k?"rgba(255,255,255,.85)":c.steel}}
 
 var LOGOS=[
- {n:1,name:"Срезанный угол",note:"монограмма в форме со срезом",
+ {n:1,name:"Силуэт в круге",note:"их город, собранный в печать",
   d:function(c,k){var p=P(c,k);return ''+
-   '<path d="M20 4H42L60 22V44A16 16 0 0 1 44 60H20A16 16 0 0 1 4 44V20A16 16 0 0 1 20 4Z" fill="'+p.solid+'"/>'+
-   '<path d="M42 4L60 22H42Z" fill="'+p.cut+'"/>'+
-   '<path d="M24 21h15" stroke="#fff" stroke-width="4.6" stroke-linecap="round"/>'+
-   '<path d="M24 21v22h8.5a8.6 8.6 0 0 0 0-17.2H24" stroke="#fff" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>'}},
+   '<circle cx="32" cy="32" r="28" fill="'+(k?"rgba(255,255,255,.10)":c.soft)+'" stroke="'+p.steel+'" stroke-width="2"/>'+
+   '<g transform="translate(9,20) scale(0.48)">'+SKY(p)+'</g>'+
+   '<path d="M12 46h40" stroke="'+p.line+'" stroke-width="2.6" stroke-linecap="round"/>'}},
 
- {n:2,name:"Куб из трёх граней",note:"объект, собранный с зазорами",
+ {n:2,name:"Силуэт на плашке",note:"строгий штамп, город вырезан",
   d:function(c,k){var p=P(c,k);return ''+
-   '<path d="M32 6 53 18 32 30 11 18Z" fill="'+p.steel+'"/>'+
-   '<path d="M9 22 30 34v22L9 44Z" fill="'+p.solid+'"/>'+
-   '<path d="M55 22 34 34v22l21-12Z" fill="'+p.solid+'" opacity=".6"/>'}},
+   '<rect x="4" y="4" width="56" height="56" rx="15" fill="'+p.solid+'"/>'+
+   '<g transform="translate(8,20) scale(0.5)" fill="#fff">'+SKYW()+'</g>'+
+   '<path d="M12 47h40" stroke="#fff" stroke-width="2.6" stroke-linecap="round" opacity=".9"/>'}},
 
- {n:3,name:"Лигатура БО",note:"две буквы одним росчерком",
+ {n:3,name:"Город и рост",note:"силуэт читается и как график стоимости",
   d:function(c,k){var p=P(c,k);return ''+
-   '<circle cx="41" cy="34" r="17" fill="none" stroke="'+p.steel+'" stroke-width="5.4"/>'+
-   '<path d="M15 15h17" stroke="'+p.line+'" stroke-width="5.4" stroke-linecap="round"/>'+
-   '<path d="M15 15v34h9a9.5 9.5 0 0 0 0-19h-9" fill="none" stroke="'+p.line+'" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>'}},
+   '<g transform="translate(4,14) scale(0.56)">'+SKYG(p)+'</g>'+
+   '<path d="M6 50h52" stroke="'+p.line+'" stroke-width="3" stroke-linecap="round"/>'}},
 
- {n:4,name:"Грань вверх",note:"рост стоимости, абстрактно",
+ {n:4,name:"Б и горизонт",note:"буква бренда переходит в линию города",
   d:function(c,k){var p=P(c,k);return ''+
-   '<rect x="5" y="5" width="54" height="54" rx="15" fill="none" stroke="'+p.line+'" stroke-width="3.6"/>'+
-   '<path d="M17 40 32 25l15 15" fill="none" stroke="'+p.solid+'" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>'+
-   '<path d="M23 47 32 38l9 9" fill="none" stroke="'+p.steel+'" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'}},
+   '<path d="M16 10h20" stroke="'+p.steel+'" stroke-width="5" stroke-linecap="round"/>'+
+   '<path d="M16 10v22h10a9 9 0 0 1 0 18H16" fill="none" stroke="'+p.line+'" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'+
+   '<g transform="translate(30,26) scale(0.42)">'+SKY(p)+'</g>'+
+   '<path d="M14 54h44" stroke="'+p.solid+'" stroke-width="3" stroke-linecap="round"/>'}},
 
- {n:5,name:"Четыре модуля",note:"строгий корпоративный знак",
+ {n:5,name:"Город в чертёжном угле",note:"оценка плюс инвентаризация",
   d:function(c,k){var p=P(c,k);return ''+
-   '<rect x="6" y="6" width="23" height="23" rx="5" fill="'+p.steel+'"/>'+
-   '<rect x="6" y="35" width="23" height="23" rx="5" fill="'+p.steel+'" opacity=".6"/>'+
-   '<rect x="35" y="35" width="23" height="23" rx="5" fill="'+p.solid+'" opacity=".72"/>'+
-   '<g transform="rotate(45 46.5 17.5)"><rect x="35" y="6" width="23" height="23" rx="5" fill="'+p.solid+'"/></g>'}},
-
- {n:6,name:"Скобки замера",note:"чертёжный знак, минимализм",
-  d:function(c,k){var p=P(c,k);return ''+
-   '<path d="M24 10H12v44h12" fill="none" stroke="'+p.line+'" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>'+
-   '<path d="M40 10h12v44H40" fill="none" stroke="'+p.line+'" stroke-width="5.4" stroke-linecap="round" stroke-linejoin="round"/>'+
-   '<circle cx="32" cy="32" r="7" fill="'+p.solid+'"/>'}},
-
- {n:7,name:"План с сектором",note:"про инвентаризацию и обмер",
-  d:function(c,k){var p=P(c,k);return ''+
-   '<rect x="6" y="6" width="52" height="52" rx="6" fill="none" stroke="'+p.line+'" stroke-width="3.6"/>'+
-   '<path d="M32 6v52M6 32h52" stroke="'+p.steel+'" stroke-width="3.2"/>'+
-   '<path d="M35 9h17a3 3 0 0 1 3 3v17H35Z" fill="'+p.solid+'"/>'}},
-
- {n:8,name:"Три полосы",note:"буква Б, разобранная на модули",
-  d:function(c,k){var p=P(c,k);return ''+
-   '<rect x="10" y="10" width="8" height="44" rx="4" fill="'+p.line+'"/>'+
-   '<rect x="22" y="10" width="32" height="8" rx="4" fill="'+p.steel+'"/>'+
-   '<path d="M22 28h24a13 13 0 0 1 0 26H22v-8h24a5 5 0 0 0 0-10H22Z" fill="'+p.solid+'"/>'}}
+   '<path d="M10 54V10h44" fill="none" stroke="'+p.line+'" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>'+
+   '<g transform="translate(15,24) scale(0.46)">'+SKY(p)+'</g>'+
+   '<path d="M14 54h42" stroke="'+p.solid+'" stroke-width="3.4" stroke-linecap="round"/>'}}
 ];
+
+
+/* Обобщённый силуэт Москвы: сталинская высотка со шпилем, башня, дома и Сити.
+   Рисуется в системе 96 на 52, ставится масштабом в каждый знак. */
+function SKY(p){return ''+
+ '<rect x="0" y="30" width="13" height="22" rx="1.5" fill="'+p.line+'"/>'+
+ '<rect x="16" y="22" width="10" height="30" rx="1.5" fill="'+p.line+'"/>'+
+ '<rect x="29" y="12" width="14" height="40" rx="1.5" fill="'+p.line+'"/>'+
+ '<rect x="33" y="4" width="6" height="9" rx="1" fill="'+p.line+'"/>'+
+ '<path d="M36 0v5" stroke="'+p.line+'" stroke-width="2.4" stroke-linecap="round"/>'+
+ '<rect x="46" y="26" width="11" height="26" rx="1.5" fill="'+p.solid+'"/>'+
+ '<rect x="60" y="16" width="12" height="36" rx="1.5" fill="'+p.line+'"/>'+
+ '<path d="M66 6v11" stroke="'+p.line+'" stroke-width="2.4" stroke-linecap="round"/>'+
+ '<circle cx="66" cy="12" r="3.4" fill="'+p.line+'"/>'+
+ '<rect x="75" y="24" width="9" height="28" rx="1.5" fill="'+p.solid+'"/>'+
+ '<rect x="87" y="34" width="9" height="18" rx="1.5" fill="'+p.line+'"/>'}
+function SKYW(){return ''+
+ '<rect x="0" y="30" width="13" height="22" rx="1.5"/><rect x="16" y="22" width="10" height="30" rx="1.5"/>'+
+ '<rect x="29" y="12" width="14" height="40" rx="1.5"/><rect x="33" y="4" width="6" height="9" rx="1"/>'+
+ '<rect x="34.8" y="0" width="2.4" height="5" rx="1"/>'+
+ '<rect x="46" y="26" width="11" height="26" rx="1.5" opacity=".72"/>'+
+ '<rect x="60" y="16" width="12" height="36" rx="1.5"/><rect x="64.8" y="6" width="2.4" height="11" rx="1"/>'+
+ '<circle cx="66" cy="12" r="3.4"/>'+
+ '<rect x="75" y="24" width="9" height="28" rx="1.5" opacity=".72"/>'+
+ '<rect x="87" y="34" width="9" height="18" rx="1.5"/>'}
+function SKYG(p){return ''+
+ '<rect x="0" y="38" width="13" height="14" rx="1.5" fill="'+p.steel+'"/>'+
+ '<rect x="16" y="30" width="11" height="22" rx="1.5" fill="'+p.steel+'"/>'+
+ '<rect x="30" y="22" width="12" height="30" rx="1.5" fill="'+p.line+'"/>'+
+ '<rect x="45" y="14" width="13" height="38" rx="1.5" fill="'+p.line+'"/>'+
+ '<rect x="49" y="5" width="5" height="10" rx="1" fill="'+p.line+'"/>'+
+ '<path d="M51.5 0v6" stroke="'+p.line+'" stroke-width="2.4" stroke-linecap="round"/>'+
+ '<rect x="61" y="8" width="13" height="44" rx="1.5" fill="'+p.solid+'"/>'+
+ '<rect x="77" y="18" width="12" height="34" rx="1.5" fill="'+p.solid+'" opacity=".62"/>'}
 
 var pickC=1, pickL=1;
 function cur(){return SCHEMES[pickC-1]}
@@ -206,18 +220,18 @@ function svg(l,c,size,dark){return '<svg viewBox="0 0 64 64" width="'+size+'" he
 function drawPrev(){
   var c=cur(), l=LOGOS[pickL-1];
   document.getElementById('prev').innerHTML=
-   '<div class="ph">'+svg(l,c,46)+'<span class="nm"><b>БТИиО</b><i>оценка и экспертиза</i></span>'+
+   '<div class="ph">'+svg(l,c,46)+'<span class="nm"><b>БТИ и ОЦЕНКИ</b><i>оценка и экспертиза</i></span>'+
    '<span class="sp"></span><span class="cta" style="background:'+c.acc+'">Заказать оценку</span></div>'+
    '<div class="body"><h3>Оценка имущества для банков, судов и нотариусов</h3>'+
    '<p>Готовим отчёт по закону 135-ФЗ и федеральным стандартам оценки. Недвижимость, транспорт, бизнес и ущерб.</p>'+
    '<div class="row"><span class="b1" style="background:'+c.acc+'">Рассчитать стоимость</span>'+
    '<span class="b2">+7 495 741-60-71</span></div></div>'+
-   '<div class="foot" style="background:'+c.dark+'">'+svg(l,c,32,true)+'<b>БТИиО</b></div>';
+   '<div class="foot" style="background:'+c.dark+'">'+svg(l,c,32,true)+'<b>БТИ и ОЦЕНКИ</b></div>';
 }
 function drawSchemes(){
   document.getElementById('schemes').innerHTML=SCHEMES.map(function(s){
     return '<div class="sch'+(s.n===pickC?' on':'')+'" data-n="'+s.n+'">'+
-     '<div class="bar" style="background:'+s.dark+'"><b>БТИиО</b><span class="sp"></span>'+
+     '<div class="bar" style="background:'+s.dark+'"><b>БТИ и ОЦЕНКИ</b><span class="sp"></span>'+
      '<span class="btn" style="background:'+s.acc+'">Заказать</span></div>'+
      '<div class="pane"><div class="t" style="background:'+s.dark+';width:76%"></div>'+
      '<div class="t" style="background:'+s.steel+';width:52%;opacity:.7"></div>'+
@@ -233,8 +247,8 @@ function drawLogos(){
   document.getElementById('logos').innerHTML=LOGOS.map(function(l){
     return '<div class="lg'+(l.n===pickL?' on':'')+'" data-n="'+l.n+'">'+
      '<div class="big">'+svg(l,c,82)+'</div>'+
-     '<div class="row">'+svg(l,c,32)+'<span class="w"><b>БТИиО</b><i>оценка и экспертиза</i></span></div>'+
-     '<div class="row dark">'+svg(l,c,32,true)+'<span class="w"><b>БТИиО</b><i>оценка и экспертиза</i></span></div>'+
+     '<div class="row">'+svg(l,c,32)+'<span class="w"><b>БТИ и ОЦЕНКИ</b><i>оценка и экспертиза</i></span></div>'+
+     '<div class="row dark">'+svg(l,c,32,true)+'<span class="w"><b>БТИ и ОЦЕНКИ</b><i>оценка и экспертиза</i></span></div>'+
      '<div class="row tiny">'+svg(l,c,20)+'<span>во вкладке браузера</span></div>'+
      '<div class="cap"><span><b>'+l.name+'</b><em>'+l.note+'</em></span><span class="num">знак '+l.n+'</span></div></div>'}).join('');
   document.querySelectorAll('.lg').forEach(function(el){
